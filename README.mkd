@@ -1,0 +1,152 @@
+# Bankruptcy Prediction Project
+
+### [Live Demo](https://bankruptcy-project-ww16.onrender.com/)
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Dataset Description](#dataset-description)
+- [Modeling Approach](#modeling-approach)
+- [Stacked Model](#stacked-model)
+- [Model Evaluation](#model-evaluation)
+- [Deployment](#deployment)
+- [How to Run Locally](#how-to-run-locally)
+- [Team](#team)
+
+---
+
+## Project Overview
+
+This project aims to predict bankruptcy status for companies using machine learning classification models. The dataset contains various financial risk-related features. Our goal was to create a robust predictive model that helps determine whether a company is at risk of bankruptcy based on these factors.
+
+We explored various machine learning algorithms, including classical methods and ensemble techniques, and finally built a **stacked model** that combines the strengths of all the individual models. This stacking model achieved an impressive **100% accuracy on both the training and test datasets**.
+
+The project was developed as part of an internship, with a team of seven members, and deployed using **Flask** on **Render**.
+
+---
+
+## Technologies Used
+
+- **Python**: Core programming language for building models and processing data
+- **Flask**: Used to build and deploy the web application
+- **Render**: Hosting platform for deployment
+- **Machine Learning Libraries**: 
+  - **Scikit-learn**: Model building, evaluation, and preprocessing
+  - **XGBoost, LightGBM**: Advanced gradient boosting models
+  - **Keras**: For building the Artificial Neural Network (ANN)
+- **Frontend**: HTML, CSS for the user interface
+
+---
+
+## Dataset Description
+
+The dataset consists of various financial and management-related features that influence a company's financial stability. Below are some of the key features:
+
+- **Industrial Risk**
+- **Management Risk**
+- **Financial Flexibility**
+- **Credibility**
+- **Competitiveness**
+- **Operating Risk**
+
+The target variable is whether the company is bankrupt (`1`) or not (`0`).
+
+---
+
+## Modeling Approach
+
+We built and evaluated several classification models to predict bankruptcy status. The models include:
+
+1. **Logistic Regression**
+2. **Decision Tree**
+3. **Bagging**
+4. **Random Forest**
+5. **AdaBoost**
+6. **Gradient Boosting**
+7. **XGBoost**
+8. **LightGBM**
+9. **K-Nearest Neighbors (KNN)**
+10. **Artificial Neural Network (ANN)**
+11. **Support Vector Machine (SVM)**
+12. **Naive Bayes**
+
+### Individual Model Performance:
+Each of these models was trained and evaluated individually, and all of them performed well on the dataset. The top performers were the ensemble methods like **Random Forest**, **XGBoost**, and **LightGBM**, as well as the **Artificial Neural Network (ANN)**.
+
+---
+
+## Stacked Model
+
+To leverage the strengths of each model, we created a **stacked model**, which is an ensemble of all the models mentioned above. Stacking involves training a meta-model (also called a level-1 model) that combines the predictions of the base models (level-0 models).
+
+### Meta-Model:
+For the meta-model, we used **Logistic Regression** to aggregate the predictions from all the base models.
+
+### Result:
+The stacked model achieved **100% accuracy** on both the **training** and **test** datasets. This remarkable performance shows the power of combining models to create a more accurate and robust predictor.
+
+---
+
+## Model Evaluation
+
+Here are the evaluation metrics for the stacked model:
+
+- **Accuracy**: 100%
+- **Precision**: 100%
+- **Recall**: 100%
+- **F1-Score**: 100%
+
+The model was highly accurate in predicting both bankruptcy and non-bankruptcy cases, with no errors on the test set.
+
+---
+
+## Deployment
+
+The project is deployed using **Flask** and hosted on **Render**. You can access the live application here:
+
+**[Live Demo](https://bankruptcy-project-ww16.onrender.com/)**
+
+In the web app, users can input risk factors for a company, and the model will predict whether the company is at risk of bankruptcy.
+
+---
+
+## How to Run Locally
+
+### Prerequisites:
+- Python 3.x installed
+- Libraries: Flask, Scikit-learn, XGBoost, LightGBM, Keras, etc.
+
+### Steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/venkyeswar/Excelr_Bankruptcy_Project.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd bankruptcy-prediction
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the Flask app:
+   ```bash
+    python app.py
+   ```
+5. Open your browser and go to `http://localhost:5000` to access the app.
+
+---
+
+## Team
+
+This project was built by a team of 7 interns during an internship:
+
+- **Garnimitta Venkateswarlu**
+- **Baruri Manoj**
+- **Tanguturi Sai Pravallika**
+- **Bhargavi Rageeru**
+- **Varun Ramavtar Pareek**
+- **Shital Manik Chavan**
+- **Byrebanda Gireesh**
+
+---
